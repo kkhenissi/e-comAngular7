@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ProductService } from '../services/product.service';
+import { CatalogueService } from '../services/catalogue.service';
 
 @Component({
   selector: 'app-new-product',
@@ -8,14 +8,14 @@ import { ProductService } from '../services/product.service';
 })
 export class NewProductComponent implements OnInit {
 
-  constructor(private productService: ProductService) { }
+  constructor(private catalogueService: CatalogueService) { }
 
   ngOnInit() {
   }
 
   onSaveProduct(data: any) {
     console.log('-----------+++++++++++++++++++------------>', data);
-    this.productService.saveRessource(this.productService.host + '/products', data.value)
+    this.catalogueService.saveRessource(this.catalogueService.host + '/products', data.value)
         .subscribe(data => {
             console.log('----------------------->', data);
         }, err => {

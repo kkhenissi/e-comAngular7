@@ -1,0 +1,17 @@
+<div *ngFor="let itm of items?._embedded.products">
+  <div class="col-md-6">
+         <div class="panel panel-default">
+            <div class="panel-heading">{{itm.name}}</div>
+            <div class="panel-body">
+              <table>
+                <tr>
+                  <td>
+                      {{itm.currentPrice}}
+                    <img height="100" src="{{this.catalogueService.host+'/photoProduct/'+itm.id}}"/>
+                  </td>
+                </tr>
+              </table>
+            </div>
+        </div>
+  </div>  
+</div>

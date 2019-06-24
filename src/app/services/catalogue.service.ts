@@ -6,9 +6,14 @@ import { Observable } from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
-export class ProductService {
-  public host = 'http://localhost:8181';
+export class CatalogueService {
+  public host = 'http://localhost:8080';
   constructor(private httpClient: HttpClient) {
+  }
+
+  public getRessource(url) {
+    return this.httpClient.get(this.host+url);
+
   }
 
 public getProducts(page: number, size: number): any {
