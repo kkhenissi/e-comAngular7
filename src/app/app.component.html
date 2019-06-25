@@ -1,22 +1,22 @@
 <nav class="navbar navbar-inverse">
-    <div class="container-fluid">
-      <div class="navbar-header">
-        <a class="navbar-brand" href="#">WebSiteName</a>
-      </div>
-      <ul class="nav navbar-nav">
-        <li class="active"><a routerLink="/">Home</a></li>
-        <li class="dropdown">
-          <a class="dropdown-toggle" data-toggle="dropdown" href="#">Products
-          <span class="caret"></span></a>
-          <ul class="dropdown-menu">
-            <li><a routerLink="/products">List</a></li>
-            <li><a routerLink="/new-product">Add</a></li>
-            
-          </ul>
-        </li>
-        <li><a href="#">Page 2</a></li>
-        <li><a href="#">Page 3</a></li>
-      </ul>
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">WebSiteName</a>
     </div>
-  </nav>
-  <router-outlet></router-outlet>
+    <ul class="nav navbar-nav">
+      <li class="active"><a routerLink="/">Home</a></li>
+      <li class="dropdown">
+        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Admin
+        <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a routerLink="/products">List product</a></li>
+          <li><a routerLink="/new-product">Add product </a></li>
+          
+        </ul>
+      </li>
+      <li><a routerLink="/gooddeals">Good Deal</a></li>
+      <li><a href="#">Dashbord</a></li>
+    </ul>
+  </div>
+</nav>
+<router-outlet></router-outlet>

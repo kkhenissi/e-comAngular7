@@ -7,8 +7,14 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class CatalogueService {
-  public host = 'http://localhost:8181';
+
+  public host = 'http://localhost:8080';
   constructor(private httpClient: HttpClient) {
+  }
+
+  public getRessource(url) {
+    return this.httpClient.get(this.host + url);
+
   }
 
 public getProducts(page: number, size: number): any {
@@ -24,7 +30,7 @@ public deleteRessource(url) {
    return this.httpClient.delete(url);
 }
 
-public saveRessource(url, data): Observable<Product> {
-  return this.httpClient.post<Product>(url, data);
+public saveRessource(url, data) {
+  return this.httpClient.post(url, data);
 }
 }

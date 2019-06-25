@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { Product } from '../shared/models/product-model';
-import { ProductService } from '../services/product.service';
+import { CatalogueService } from '../services/catalogue.service';
 
 
 @Component({
@@ -20,13 +20,13 @@ export class ProduitsComponent implements OnInit {
   totalPages: number = 0;
   public pages: Array<number>;
 
-  constructor(private productService: ProductService) { }
+  constructor(private catalogueService: CatalogueService) { }
 
   ngOnInit() {
 
   }
 onGetproducts() {
-   this.products = this.productService.getProducts(this.currentPage, this.size)
+   this.products = this.catalogueService.getProducts(this.currentPage, this.size)
    .subscribe(data => {
     this.totalPages = data['page'].totalPages;
     this.pages = new Array(this.totalPages);
@@ -53,7 +53,7 @@ onChercher(form: any) {
 
 chercherProduits() {
 //  this.currentKeyword = form.keyword;
-  this.productService.getProductBymotClé(this.currentKeyword, this.currentPage, this.size)
+  this.catalogueService.getProductBymotClé(this.currentKeyword, this.currentPage, this.size)
                 .subscribe(data => {
                   this.totalPages = data['page'].totalPages;
                   this.pages = new Array(this.totalPages);
@@ -68,7 +68,7 @@ chercherProduits() {
 onDeleteProduct(p) {
   const conf = confirm('Etes vous sûre de vouloire supprimer cette article ??');
   if (conf) {
-    this.productService.deleteRessource(p._links.self.href)
+    this.catalogueService.deleteRessource(p._links.self.href)
          .subscribe(data => {
               this.chercherProduits();
          }, err => {
