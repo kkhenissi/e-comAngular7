@@ -7,11 +7,11 @@ import { GoodDealComponent } from './good-deal/good-deal.component';
 import { ItemsComponent } from './items/items.component';
 
 const routes: Routes = [
-   { path: 'admin', component: ProduitsComponent },
+   { path: 'list', component: ProduitsComponent },
    { path: 'new-product', component: NewProductComponent},
    { path: 'gooddeals', component: GoodDealComponent },
-   { path: 'items', component: ItemsComponent },
-   { path: '', redirectTo: '/items', pathMatch: 'full'}
+   { path: 'items/:id', component: ItemsComponent },
+   { path: '', redirectTo: '/items/1', pathMatch: 'full'}
 ];
 
 @NgModule({

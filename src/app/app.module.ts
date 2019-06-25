@@ -10,6 +10,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { GoodDealComponent } from './good-deal/good-deal.component';
 import { ItemsComponent } from './items/items.component';
+import { CategoriesComponent } from './categories/categories.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { ItemsComponent } from './items/items.component';
     NewProductComponent,
     HomeComponent,
     GoodDealComponent,
-    ItemsComponent
+    ItemsComponent,
+    CategoriesComponent
   ],
   imports: [
     BrowserModule,

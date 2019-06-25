@@ -11,14 +11,26 @@
         <input class="form-control" type="text" name="name" ngModel>
       </div>
       <div class="form-group">
+          <label class="control-label">Category :</label>
+          <input class="form-control" type="select-imput" name="category" ngModel>
+      </div>  
+      <div class="form-group">
           <label class="control-label">Description :</label>
           <input class="form-control" type="text" name="Description" ngModel>
       </div>  
       <div class="form-group">
           <label class="control-label">current Price :</label>
           <input class="form-control" type="number" name="currentPrice" ngModel>
-
       </div>  
+      <div class="form-group">
+          <label class="container control-label"> 
+            <input class="form-control" type="checkbox" name="selected" [(ngModel)]="selected"  data-md-icheck (change)="toggleVisibility($event)">
+                  Item will  <span *ngIf="marked">on sale</span><span *ngIf="!marked"> not be for sale</span>
+              <span class="checkmark"></span>
+          </label>
+      </div>
+      <div><b> check or uncheck and save to change status</b></div>
+
       <button class="btn btn-success" type="submit">Save</button>
     </form>
   </div>

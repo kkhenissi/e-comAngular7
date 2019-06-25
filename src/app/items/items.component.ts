@@ -15,12 +15,12 @@ export class ItemsComponent implements OnInit {
     this.getItems();
   }
   getItems() {
-    this.catalogueService.getRessource("/products/search/selectedProducts")
+    this.catalogueService.getRessource('/products/search/selectedProducts')
          .subscribe(data => {
            this.items = data;
          }, err => {
            console.log(err);
-         })
+         });
   }
 
 }

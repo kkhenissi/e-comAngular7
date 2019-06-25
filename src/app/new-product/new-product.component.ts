@@ -7,6 +7,8 @@ import { CatalogueService } from '../services/catalogue.service';
   styleUrls: ['./new-product.component.css']
 })
 export class NewProductComponent implements OnInit {
+  marked = false;
+  theCheckbox = false;
 
   constructor(private catalogueService: CatalogueService) { }
 
@@ -14,7 +16,7 @@ export class NewProductComponent implements OnInit {
   }
 
   onSaveProduct(data: any) {
-    console.log('-----------+++++++++++++++++++------------>', data);
+    console.log('-----------+++++++++++++++++++------------>', data.value);
     this.catalogueService.saveRessource(this.catalogueService.host + '/products', data.value)
         .subscribe(data => {
             console.log('----------------------->', data);
@@ -22,6 +24,10 @@ export class NewProductComponent implements OnInit {
           console.log(err);
         });
 
+  }
+
+  toggleVisibility(e) {
+    this.marked = e.target.checked;
   }
 
 }

@@ -6,9 +6,12 @@
               <table>
                 <tr>
                   <td>
-                      {{itm.currentPrice}}
+                      {{itm.currentPrice | number: '0.2'}}
                     <img height="100" src="{{this.catalogueService.host+'/photoProduct/'+itm.id}}"/>
                   </td>
+                </tr>
+                <tr>
+                  <td>{{itm.description}}</td>
                 </tr>
               </table>
             </div>

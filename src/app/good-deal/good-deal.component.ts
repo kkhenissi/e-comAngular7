@@ -13,15 +13,15 @@ export class GoodDealComponent implements OnInit {
   constructor(private catalogueService: CatalogueService) { }
 
   ngOnInit() {
-    this.getCateories();
+    this.getCategories();
   }
-  getCateories() {
-    this.catalogueService.getRessource("/categories")
+  getCategories() {
+    this.catalogueService.getRessource('/categories')
          .subscribe(data => {
            this.categories = data;
          }, err => {
            console.log('err');
-         })
+         });
   }
 
 }
