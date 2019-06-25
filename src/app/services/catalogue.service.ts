@@ -8,7 +8,7 @@ import { Observable } from 'rxjs';
 })
 export class CatalogueService {
 
-  public host = 'http://localhost:8080';
+  public host = 'http://localhost:8781';
   constructor(private httpClient: HttpClient) {
   }
 

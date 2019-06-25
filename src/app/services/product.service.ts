@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class ProductService {
-  public host = 'http://localhost:8181';
+  public host = 'http://localhost:8781';
   constructor(private httpClient: HttpClient) {
   }
 

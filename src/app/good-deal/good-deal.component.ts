@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CatalogueService } from '../services/catalogue.service';
-import { url } from 'inspector';
+
 
 @Component({
   selector: 'app-good-deal',
