@@ -10,29 +10,31 @@ import { Router } from '@angular/router';
 })
 export class CategoriesComponent implements OnInit {
   url: any;
-  constructor(private catalogueService: CatalogueService, private router: Router ) { }
+  constructor(private catalogueService: CatalogueService, 
+              private router: Router) { }
   categories;
   currentCategorie;
 
   ngOnInit() {
-    this.catalogueService.getRessource(this.url)
+    this.catalogueService.getRessource('/categories')
         .subscribe(data => {
           this.categories = data;
+          console.log('kjkjssssssssssssssssssssssssssssss', this.categories);
         }, err => {
           console.log('error !!', err);
         });
 
   }
 
-  onGetProduct(cat) {
+  onGetProductByCateg(cat) {
     this.currentCategorie = cat;
 
-    let url = cat._links.produits.href;
-    console.log('555555555555555555', url);
+//    let url = cat._links.products.href;
+    console.log('555555555555555555', cat.id);
   //  console.log(this.router.navigateByUrl(btoa('/produits/' + btoa(urlProduits))));
  // alert('11')
  // this.router.navigateByUrl(btoa('/produits/' + btoa(urlProduits)));
- this.router.navigateByUrl('/products/' + btoa(url));
+ this.router.navigateByUrl('/products/2/' + cat.id);
 
 
   }

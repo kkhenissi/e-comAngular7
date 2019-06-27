@@ -1,20 +1,62 @@
-<div *ngFor="let itm of items?._embedded.products">
-  <div class="col-md-6">
-         <div class="panel panel-default">
-            <div class="panel-heading">{{itm.name}}</div>
-            <div class="panel-body">
-              <table>
-                <tr>
-                  <td>
-                      {{itm.currentPrice | number: '0.2'}}
-                    <img height="100" src="{{this.catalogueService.host+'/photoProduct/'+itm.id}}"/>
-                  </td>
-                </tr>
-                <tr>
-                  <td>{{itm.description}}</td>
-                </tr>
-              </table>
-            </div>
+<!-- <div class="container"> -->
+    <!-- <div class="col-md-3">
+        <app-categories></app-categories>
+    </div> -->
+    <!-- <div class="container col-md-9"> -->
+        <!--  -->
+      <div class="row">
+        <div class="col-3">
+              Categories
+
         </div>
-  </div>  
-</div>
+        <div class="col">
+            <div class="row">
+                <ng-container  *ngFor="let itm of items?._embedded.products; let i = index">
+                   <div class="col">
+                       <div class="card" style="width: 18rem;">
+                           <img  src="{{this.catalogueService.host+'/photoProduct/'+itm.id}}" class="card-img img-fluid">
+                           <div class="card-body">
+                             <h5 class="card-title">{{itm.name}}</h5>
+                             <p class="card-text">{{itm.description}}</p>
+                             <a href="#" class="btn btn-outline-primary">Buy</a>
+                                <span style="margin-left:5px; margin-right:5px;" class="badge badge-secondary">{{itm.currentPrice | number: '0.2'}}</span>
+                             <a href="#" class="btn btn-outline-danger">Cancel</a>
+                           </div>
+                         </div>
+           
+                    </div>
+                    <div *ngIf="(i + 1) % 2 === 0 " class="w-100"></div>
+                </ng-container>
+       
+              </div>
+       
+
+        </div>
+      </div>
+
+
+
+
+ 
+<!--               
+                      <div class="panel panel-default">
+                          <div class="panel-heading">{{itm.name}}</div>
+                          <div class="panel-body">
+                            <table>
+                              <tr>
+                                <td>
+                                    {{itm.currentPrice | number: '0.2'}}
+                                  <img height="100" src="{{this.catalogueService.host+'/photoProduct/'+itm.id}}"/>
+                                </td>
+                              </tr>
+                              <tr>
+                                <td>{{itm.description}}</td>
+                              </tr>
+                            </table>
+                          </div>
+                      </div> -->
+              <!-- </div>   -->
+
+        <!-- </div> -->
+  <!-- </div> -->
+<!-- </div> -->

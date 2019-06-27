@@ -1,0 +1,13 @@
+
+<div 
+    *ngFor="let p of products | async"
+ class="card" style="width: 18rem;">
+    <img src="{{this.catalogueService.host+'/photoProduct/'+p.id}}" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">{{p.name}}</h5>
+      <p class="card-text">{{p.description}}</p>
+      <a href="#" class="btn btn-primary">Add to Cart</a>
+      <p class="card-text">{{p.actualPrice | currency: 'EUR':true}}</p>
+      <a href="#" class="btn btn-primary">Cancel</a>
+    </div>
+  </div>

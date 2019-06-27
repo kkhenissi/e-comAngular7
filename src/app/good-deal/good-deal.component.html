@@ -1,14 +1,28 @@
-<div class="container">
-  <div class="col-md-3">
-    <ul class="list-group">
+<div class="container-fluid" style="margin-top: 60px;">
+  <!-- <div col-md-4> -->
+    <!-- <ul class="list-group">
       <li class="list-group-item" *ngFor="let c of categories?._embedded.categories">
         {{c.name}}
       </li>
     </ul>
-  </div>
-  <div class="col-md-9">
-      <app-items></app-items> 
+  </div>   -->
+  <!-- <div col-md-8> -->
+  <!-- <div class="container-fluid"> -->
+  <!-- <div class="row"> -->
+  <!-- <div class="col-md-3">
+      <app-categories></app-categories>
+  </div> -->
+  
+  <!-- <div class="col-md-12"> -->
+     <div class="row"> 
+      <app-categories class="col-md-4"></app-categories>
+      <app-items class="col-md-8"></app-items>
+       
       <!-- <router-outlet></router-outlet> -->
-  </div>
-</div>
+      </div> 
+<!-- </div> -->
+<!-- </div> -->
+<!-- </div> -->
+<!-- </div> -->
+<!-- </div> -->
 
