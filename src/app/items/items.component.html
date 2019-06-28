@@ -5,10 +5,10 @@
     <!-- <div class="container col-md-9"> -->
         <!--  -->
       <div class="row">
-        <div class="col-3">
+        <!-- <div class="col-3">
               Categories
 
-        </div>
+        </div> -->
         <div class="col">
             <div class="row">
                 <ng-container  *ngFor="let itm of items?._embedded.products; let i = index">
@@ -18,14 +18,18 @@
                            <div class="card-body">
                              <h5 class="card-title">{{itm.name}}</h5>
                              <p class="card-text">{{itm.description}}</p>
-                             <a href="#" class="btn btn-outline-primary">Buy</a>
-                                <span style="margin-left:5px; margin-right:5px;" class="badge badge-secondary">{{itm.currentPrice | number: '0.2'}}</span>
-                             <a href="#" class="btn btn-outline-danger">Cancel</a>
+                            
+                           </div>
+                           <div class="footer card-footer">
+
+                            <a href="#" class="btn btn-outline-primary">Buy</a>
+                            <span style="margin-left:5px; margin-right:5px;" class="badge badge-secondary">{{itm.currentPrice | number: '0.2'}}</span>
+                         <a href="#" class="btn btn-outline-danger">Cancel</a>
                            </div>
                          </div>
            
                     </div>
-                    <div *ngIf="(i + 1) % 2 === 0 " class="w-100"></div>
+                    <!-- <div *ngIf="(i + 1) % 2 === 0 " class="w-100"></div> -->
                 </ng-container>
        
               </div>

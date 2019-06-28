@@ -1,6 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { CatalogueService } from '../services/catalogue.service';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 
 
 @Component({
@@ -10,7 +10,12 @@ import { Router } from '@angular/router';
 })
 export class CategoriesComponent implements OnInit {
   url: any;
-  constructor(private catalogueService: CatalogueService, 
+  // tslint:disable-next-line:member-ordering
+  @Output() queryChange = new EventEmitter();
+  // tslint:disable-next-line:member-ordering
+  queryParam: string = '';
+  constructor(private catalogueService: CatalogueService,
+              private route: ActivatedRoute,
               private router: Router) { }
   categories;
   currentCategorie;
@@ -37,6 +42,10 @@ export class CategoriesComponent implements OnInit {
  this.router.navigateByUrl('/products/2/' + cat.id);
 
 
+  }
+  paramChanged() {
+   this.queryParam =  this.route.snapshot.paramMap.get('idCat');
+    this.queryChange.emit(this.currentCategorie);
   }
 
 }

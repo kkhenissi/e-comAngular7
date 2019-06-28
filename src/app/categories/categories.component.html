@@ -1,8 +1,11 @@
-<ul class="list-group">
-    <li [ngClass]="currentCategorie && currentCategorie._links.self==c._links.self? 'active':''" *ngFor="let c of categories._embedded.categories"
-     class="list-group-item"
+<div class="list-group">
+    <a [ngClass]="currentCategorie && currentCategorie._links.self==c._links.self? 'active':''" *ngFor="let c of categories._embedded.categories"
+    routerLink="/"
+    [queryParams]="{category: c.$key}" 
+    (click)="valueChange()"
+    class="list-group-item"
      style="cursor: pointer" (click)="onGetProductByCateg(c)">
         {{c.name}}
-    </li>
-</ul>
+    </a>
+</div>
  

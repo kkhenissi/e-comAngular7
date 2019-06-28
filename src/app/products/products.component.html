@@ -1,6 +1,6 @@
 
 <div 
-    *ngFor="let p of products | async"
+    *ngFor="let p of products$ | async"
  class="card" style="width: 18rem;">
     <img src="{{this.catalogueService.host+'/photoProduct/'+p.id}}" class="card-img-top" alt="...">
     <div class="card-body">

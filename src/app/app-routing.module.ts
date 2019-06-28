@@ -26,14 +26,15 @@ const routes: Routes = [
   // { path: 'admin/orders', component: AdminOrdersComponent }
 
     { path: 'items', component: ItemsComponent },
-    { path: '', redirectTo: 'items', pathMatch: 'full'},
+    // { path: '', redirectTo: 'items', pathMatch: 'full'},
 
 
     { path: 'list', component: ProduitsComponent },
     { path: 'new-product', component: NewProductComponent},
     { path: 'gooddeals', component: GoodDealComponent },
+    // { path: 'categories/', component: GoodDealComponent },
     { path: 'items/:p1/:p2', component: ItemsComponent },
-    { path: '', redirectTo: '/items/1/0', pathMatch: 'full'}
+    // { path: '', redirectTo: '/items/1/0', pathMatch: 'full'}
 ];
 
 @NgModule({
