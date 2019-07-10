@@ -21,6 +21,14 @@ public getProducts(page: number, size: number): any {
  return  this.httpClient.get(this.host + '/products?page=' + page + '&size=' + size);
 }
 
+public getAllProducts(): any {
+  return  this.httpClient.get(this.host + '/products');
+ }
+
+ public getAllCategorys(): any {
+   return this.httpClient.get(this.host + '/categorys');
+ }
+
 public getProductBymotClé(mc: string, page: number, size: number): any {
    return this.httpClient.get(this.host + '/products/search/byNamePage?mc=' + mc + '&page=' + page + '&size=' + size);
 

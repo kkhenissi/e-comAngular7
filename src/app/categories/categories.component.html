@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <ul class="list-group" *ngIf="true == false">
     <li [ngClass]="currentCategorie && currentCategorie._links.self==c._links.self? 'active':''" *ngFor="let c of categories._embedded.categories"
      class="list-group-item"
@@ -5,3 +6,16 @@
         {{c.nomCategorie}}
     </li>
 </ul>
+=======
+<div class="list-group">
+    <a [ngClass]="currentCategorie && currentCategorie._links.self==c._links.self? 'active':''" *ngFor="let c of categories._embedded.categories"
+    routerLink="/"
+    [queryParams]="{category: c.$key}" 
+    (click)="valueChange()"
+    class="list-group-item"
+     style="cursor: pointer" (click)="onGetProductByCateg(c)">
+        {{c.name}}
+    </a>
+</div>
+ 
+>>>>>>> 970cf5e0b9810275a1c985681090d37c6e9a0abf
