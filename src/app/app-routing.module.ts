@@ -13,12 +13,15 @@ import { AdminProductsComponent } from './admin/admin-products/admin-products.co
 import { AdminOrdersComponent } from './admin/admin-orders/admin-orders.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { ProductsComponent } from './products/products.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
 
 const routes: Routes = [
 
   // { path: '', component: ProductsComponent },
   // { path: 'products', component: ProduitsComponent },
-  // { path: 'shopping-cart', component: ShoppingCartComponent },
+  { path: 'home', component: HomeComponent },
+   { path: 'shopping-cart', component: ShoppingCartComponent },
+   { path: 'dashboard', component: DashboardComponent },
   // { path: 'check-out', component: CheckOutComponent },
   // { path: 'order-success', component: OrderSuccessComponent },
   // { path: 'login', component: LoginComponent },
@@ -34,7 +37,7 @@ const routes: Routes = [
     { path: 'gooddeals', component: GoodDealComponent },
     // { path: 'categories/', component: GoodDealComponent },
     { path: 'items/:p1/:p2', component: ItemsComponent },
-    // { path: '', redirectTo: '/items/1/0', pathMatch: 'full'}
+     { path: '', redirectTo: '/home', pathMatch: 'full'}
 ];
 
 @NgModule({

@@ -24,7 +24,7 @@ public deleteRessource(url) {
    return this.httpClient.delete(url);
 }
 
-public saveRessource(url, data) {
+public saveRessource(url: string, data: any) {
   return this.httpClient.post(url, data);
 }
 }
